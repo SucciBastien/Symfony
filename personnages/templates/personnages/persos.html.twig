@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonnagesController!{% endblock %}
+
+{% block titre %}La liste des personnages{% endblock %}
+
+{% block body %}
+<Section>
+    {% for value in tabPerso %}
+        <a href="{{path('afficherPersonnage', {'nom' : value.pseudo})}}" class=" " >
+            <article class=" bg-light rounded border border-dark shadow p-2 m-2 text-center" >
+                <div><img src="{{asset('images/personnages/'~ value.pseudo ~ '.png')}}" alt=""></div>
+                <div>Pseudo : {{value.pseudo | capitalize}}</div>
+                <div>Sexe : {% if value.sexe %} Homme 
+                                {% else %} Femme
+                            {% endif %}
+                </div>
+                <div>Age : {{value.age}}</div>
+                <div>Force : {{value.carac.for}}</div>
+                <div>Agilité : {{value.carac.agi}}</div>
+                <div>Intelligence : {{value.carac.int}}</div>
+            </article>
+        </a>
+    {% endfor %}
+</Section>
+
+
+
+{% endblock %}

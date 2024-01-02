@@ -1,0 +1,23 @@
+body {
+  background-color: skyblue;
+}
+body section {
+  display: flex;
+  justify-content: center;
+}
+body section a {
+  width: 22%;
+  text-decoration: none;
+  color: black;
+}
+body section a article:hover {
+  transform: scale(106%);
+  color: black;
+  cursor: pointer;
+}
+body section a article div {
+  user-select: none;
+}
+body section a article div img {
+  -webkit-user-drag: none;
+}
